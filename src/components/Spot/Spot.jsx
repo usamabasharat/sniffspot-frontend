@@ -6,7 +6,6 @@ import { AllReviews } from "../Reviews/AllReviews";
 import { ReviewForm } from "../Reviews/ReviewForm";
 import { ReactComponent as StarIcon } from "assets/star.svg";
 import PlaceholderImage from "assets/placeholder.jpg";
-import urls from "routing/urls";
 
 export const Spot = () => {
   const [activeReview, setActiveReview] = useState(null);
@@ -27,7 +26,7 @@ export const Spot = () => {
 
   return (
     <div>
-      <Link to={urls.base} className="btn btn-small btn-light border my-3">
+      <Link to='/' className="btn btn-small btn-light border my-3">
         Go back
       </Link>
 
