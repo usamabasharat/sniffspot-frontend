@@ -52,7 +52,7 @@ export const Spots = () => {
                       <span className="fw-bold">{`$${spot.price}`}</span>
                       <span> dog / hour</span>
                     </span>
-                    <span className="col spot-review"> <StarIcon />({spot.reviews.length})</span>
+                    <span className="col spot-review"> <StarIcon /> {spot.average_rating} ({spot.reviews.length})</span>
                   </p>
                 </div>
               </div>
