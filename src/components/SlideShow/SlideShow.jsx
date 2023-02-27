@@ -18,11 +18,8 @@ export const Slideshow = ({spotImages}) => {
   return(
     <div className="slide-container">
       <div
-        className="image-container"
-        style={{
-          backgroundImage: `url(${spotImages[current]})`
-        }}
-      >
+        className="image-container">
+        <img className='slide-img' src={spotImages[current]} alt=''/>
         <div className="controls">
           <button className="controls__button" onClick={goBack}>
             {'<'}
