@@ -20,14 +20,14 @@ export const Slideshow = ({spotImages}) => {
       <div
         className="image-container">
         <img className='slide-img' src={spotImages[current]} alt=''/>
-        <div className="controls">
+        {spotImages.length > 1 && <div className="controls">
           <button className="controls__button" onClick={goBack}>
             {'<'}
           </button>
           <button className="controls__button" onClick={goForward}>
             {'>'}
           </button>
-        </div>
+        </div>}
       </div>
     </div>
   )
