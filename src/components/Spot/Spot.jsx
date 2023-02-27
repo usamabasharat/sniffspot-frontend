@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { SpotContext } from "contexts/SpotContext";
-import { RenderImages } from "../Images/RenderImages";
 import { AllReviews } from "../Reviews/AllReviews";
 import { ReviewForm } from "../Reviews/ReviewForm";
 import { ReactComponent as StarIcon } from "assets/star.svg";
 import PlaceholderImage from "assets/placeholder.jpg";
+import { Slideshow } from "components/SlideShow/SlideShow";
 
 export const Spot = () => {
   const [activeReview, setActiveReview] = useState(null);
@@ -49,7 +49,7 @@ export const Spot = () => {
       </div>
 
       {currentSpot.image_urls.length > 0 ? (
-        <RenderImages images={currentSpot.image_urls} />
+        <Slideshow spotImages={currentSpot.image_urls} />
       ) : (
         <img
           src={PlaceholderImage}
