@@ -16,7 +16,7 @@ export const Slideshow = ({spotImages}) => {
         <Slide>
          {spotImages.map((slideImage, index)=> (
             <div key={index}>
-              <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
+              <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage})` }}>
               </div>
             </div>
           ))}
