@@ -1,26 +1,37 @@
 import React from 'react';
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
+import { useState } from "react";
 
-const divStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  backgroundSize: 'cover',
-  height: '400px'
-}
+import './SlideShow.scss'
+
 
 export const Slideshow = ({spotImages}) => {
-    return (
-      <div className="slide-container">
-        <Slide>
-         {spotImages.map((slideImage, index)=> (
-            <div key={index}>
-              <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage})` }}>
-              </div>
-            </div>
-          ))}
-        </Slide>
+  const [current, setCurrent] = useState(0)
+
+  const goBack = () => {
+    current >= spotImages.length - 1 ? setCurrent(0) : setCurrent(current + 1)
+  }
+
+  const goForward = () => {
+    current === 0 ? setCurrent(spotImages.length - 1) : setCurrent(current - 1)
+  }
+
+  return(
+    <div className="slide-container">
+      <div
+        className="image-container"
+        style={{
+          backgroundImage: `url(${spotImages[current]})`
+        }}
+      >
+        <div className="controls">
+          <button className="controls__button" onClick={goBack}>
+            {'<'}
+          </button>
+          <button className="controls__button" onClick={goForward}>
+            {'>'}
+          </button>
+        </div>
       </div>
-    )
+    </div>
+  )
 }

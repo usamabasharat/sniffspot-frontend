@@ -1,0 +1,32 @@
+.slide-container {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 700px;
+  height: 700px;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  background-position: top left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.2s ease-in-out;
+}
+
+.controls {
+  position: relative;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls__button {
+  background-color: lightblue;
+  border: none;
+  border-radius: 2px;
+  padding: 15px;
+  margin: 0 10px;
+  cursor: pointer;
+}
