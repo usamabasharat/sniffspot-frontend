@@ -46,7 +46,7 @@ export const Spots = () => {
 
                 <div className="card-body">
                   <p>{spot.title}</p>
-                  <p className="text-muted">{spot.description}</p>
+                  <p className="text-muted">{spot.description?.substring(0, 45).concat('...')}</p>
                   <p className="row">
                     <span className="col">
                       <span className="fw-bold">{`$${spot.price}`}</span>
